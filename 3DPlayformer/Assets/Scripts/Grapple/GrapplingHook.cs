@@ -86,10 +86,10 @@ public class GrapplingHook : MonoBehaviour
 
     private void StopGrapple()
     {
-        /*rope.positionCount = 0;
+        rope.positionCount = 0;
         if (springJoint)
         {
             Destroy(springJoint);
-        }*/
+        }
     }
 }
