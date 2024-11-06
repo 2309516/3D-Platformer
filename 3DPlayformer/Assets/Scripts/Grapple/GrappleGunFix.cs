@@ -13,11 +13,11 @@ public class GrappleGunFix : MonoBehaviour
     public Transform Player;
     private float maxDistance = 100;
     private SpringJoint springJoint;
+
     private void Awake()
     {
         rope = GetComponent<LineRenderer>();
     }
-
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -28,13 +28,16 @@ public class GrappleGunFix : MonoBehaviour
         {
             StopGrapple();
         }
-    }
 
+        if (springJoint != null && Input.GetKey(KeyCode.E))
+        {
+            springJoint.maxDistance = Mathf.Max(0, springJoint.maxDistance - 0.5f);
+        }
+    }
     private void LateUpdate()
     {
         Rope();
     }
-
     private void Grapple()
     {
         RaycastHit hit;
@@ -53,22 +56,19 @@ public class GrappleGunFix : MonoBehaviour
             rope.positionCount = 2;
         }
     }
-
     private void StopGrapple()
     {
         rope.positionCount = 0;
         Destroy(springJoint);
     }
-
     public bool isGrappling()
     {
         return springJoint != null;
     }
-
     public Vector3 GrapplePoint()
     {
         return grapplePoint;
-    }
+    }   
     private void Rope()
     {
         if (!springJoint)
