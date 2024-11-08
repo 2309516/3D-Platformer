@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    public float playerSpeed = 15f, jumpForce = 30f, groundDrag = 5f, airControlFactor = 0.5f, maxVelocity = 10f;
+    [Range(0f,1000f)]public float playerSpeed = 15f;
+    public float jumpForce = 30f, groundDrag = 5f, airControlFactor = 0.5f, maxVelocity = 10f;
 
     private Rigidbody _rb;
     private bool _isGrounded;

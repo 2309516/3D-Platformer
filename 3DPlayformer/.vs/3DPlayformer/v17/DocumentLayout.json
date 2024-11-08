@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|c:\\users\\2309516\\documents\\github\\3d-platformer\\3dplayformer\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|c:\\users\\2309516\\documents\\github\\3d-platformer\\3dplayformer\\assets\\scripts\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\assets\\scripts\\grapple\\grapplegunfix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\grapple\\grapplegunfix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|c:\\users\\2309516\\documents\\github\\3d-platformer\\3dplayformer\\assets\\scripts\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|c:\\users\\2309516\\documents\\github\\3d-platformer\\3dplayformer\\assets\\scripts\\grapple\\grapplerotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\grapple\\grapplerotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|c:\\users\\2309516\\documents\\github\\3d-platformer\\3dplayformer\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB2F767F-1A3A-F1D9-D79B-AE36FF04767E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +35,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Score.cs",
+              "DocumentMoniker": "C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\Assets\\Scripts\\Score.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Score.cs",
+              "ToolTip": "C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\Assets\\Scripts\\Score.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Score.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T12:40:05.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UI.cs",
+              "DocumentMoniker": "C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\Assets\\Scripts\\UI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI.cs",
+              "ToolTip": "C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\Assets\\Scripts\\UI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T12:39:59.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T16:20:30.217Z",
+              "WhenOpened": "2024-11-08T12:12:16.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GrappleRotation.cs",
+              "DocumentMoniker": "C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\Assets\\Scripts\\Grapple\\GrappleRotation.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Grapple\\GrappleRotation.cs",
+              "ToolTip": "C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\Assets\\Scripts\\Grapple\\GrappleRotation.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Grapple\\GrappleRotation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T11:36:32.249Z",
               "EditorCaption": ""
             },
             {
@@ -41,9 +92,10 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Grapple\\GrappleGunFix.cs",
               "ToolTip": "C:\\Users\\2309516\\Documents\\GitHub\\3D-Platformer\\3DPlayformer\\Assets\\Scripts\\Grapple\\GrappleGunFix.cs",
               "RelativeToolTip": "Assets\\Scripts\\Grapple\\GrappleGunFix.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAkwEkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T16:20:16.094Z"
+              "WhenOpened": "2024-11-08T11:35:43.595Z",
+              "EditorCaption": ""
             }
           ]
         }
