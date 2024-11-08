@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using grappleGun;
 public class GrappleRotation : MonoBehaviour
 {
    public GrappleGunFix grapple;
     private Quaternion rotationAngle;
     private float rotateSpeed = 5f;
 
-    private void Update()
+    private void Update()   
     {
         if (!grapple.isGrappling())
         {

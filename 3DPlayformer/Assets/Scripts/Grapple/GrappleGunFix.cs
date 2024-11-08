@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using TMPro.Examples;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,6 +17,9 @@ namespace grappleGun
         public Transform Player;
         private float maxDistance = 100;
         private SpringJoint springJoint;
+        public int score = 0;
+        private TMP_Text scoreText;
+        private GameObject tempPoint;
 
         [Header("Spring Joint")]
         [SerializeField] private float sj_maxDistance = 0.25f;
@@ -24,9 +28,11 @@ namespace grappleGun
         [SerializeField] private float sj_massScale = 4.5f;
         [SerializeField] private int sj_postionCount = 2;
 
+
         private void Awake()
         {
             rope = GetComponent<LineRenderer>();
+            scoreText = GameObject.Find("score").GetComponent<TMP_Text>();
 
         }
         private void Update()
@@ -54,6 +60,12 @@ namespace grappleGun
             RaycastHit hit;
             if (Physics.Raycast(Camera.position, Camera.forward, out hit, maxDistance))
             {
+                if (hit.collider.CompareTag("ScoreOBJ"))
+                {
+                    score++;
+                    scoreText.text = "Score: " + score.ToString();
+                    tempPoint = hit.collider.gameObject;
+                }
                 grapplePoint = hit.point;
                 springJoint = Player.AddComponent<SpringJoint>();
                 springJoint.autoConfigureConnectedAnchor = false;
@@ -71,6 +83,10 @@ namespace grappleGun
         {
             rope.positionCount = 0;
             Destroy(springJoint);
+
+            if (tempPoint == null) return;
+            Destroy(tempPoint);
+
         }
         public bool isGrappling()
         {
