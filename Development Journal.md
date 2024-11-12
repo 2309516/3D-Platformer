@@ -99,6 +99,31 @@ Bradley Curtis
 ```
 
 *Implementation of the Grapple Gun*
+- I also added rotation to the grapple gun as it looked stiff and weird when the rope created by the line renderer would move around but the gun would always face forward so i added rotation using Quaternions.
+
+```csharp
+
+public class GrappleRotation : MonoBehaviour
+{
+   public GrappleGunFix grapple;
+    private Quaternion rotationAngle;
+    private float rotateSpeed = 5f;
+
+    private void Update()   
+    {
+        if (!grapple.isGrappling())
+        {
+            rotationAngle = transform.parent.rotation;
+        }
+        else
+        {
+            rotationAngle = Quaternion.LookRotation(grapple.GrapplePoint() - transform.position);
+        }
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotationAngle, Time.deltaTime * rotateSpeed);
+    }
+}
+```
+
 
 - After the initial prototype of the grapple, I asked some of my peers to play the game and a common problem came up, which was that the movement was way to fast and the grapple was unintuitive. 
 
@@ -170,7 +195,7 @@ public class PlayerController : MonoBehaviour
     }
 }
 ```
-*Updated movement script to add drag on the player when theyre on the ground and limit the players velocity to a set speed*
+*Updated movement script to add drag on the player when they're on the ground and limit the players velocity to a set speed*
 
 ## Outcome
 
