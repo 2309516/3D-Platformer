@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
 ## Outcome
 ![GameEngineImage](TetheredTrialsGameEngineIMG.png)
 
-[Video of final game](https://youtu.be/yAdk6yU182E)
+[Link to gameplay video demonstration](https://youtu.be/yAdk6yU182E)
 
 [Link to the game on Itch.io](https://popegames.itch.io/tethered-trials)
 
@@ -209,9 +209,9 @@ public class PlayerController : MonoBehaviour
  
 - One of the biggest problems I had in creating the game was actually etting the grapple hook to work as for the longest time it kept on creating the 2nd Spring joint at 0,0,0 rather than at where the raycast was hitting. This was due to the Spring Joint being created in local space rather than world space. 
 
-- I spent a lot of my time tring to build a world which was unneccesary and if i didnt focus so much on that i couldve refined the player movement a little bit more and make the player feel less floaty after letting go of the grapple.
+- I spent a lot of my time tring to build a world which was unneccesary and if I didnt focus so much on that I couldve refined the player movement a little bit more and make the player feel less floaty after letting go of the grapple.
 
-- Next time I will spend a bit more time thinking of a gameplay direction rather then just jumping in and trying to implement whatever comes into my head as this wasted a lot of my time on the project. I find myelf jumping around from script to script and from ideas when i dont have a clear direction of what i am trying to do. In the future I will plan more in detail of what i want to do next and have a better schedule in place.
+- Next time I will spend a bit more time thinking of a gameplay direction rather then just jumping in and trying to implement whatever comes into my head as this wasted a lot of my time on the project. I find myelf jumping around from script to script and from ideas when I dont have a clear direction of what I am trying to do. In the future I will plan more in detail of what I want to do next and have a better schedule in place.
 
 - I am very happy with how the grappling hook turned out and that i was able to get it to work properly in the end. 
 
