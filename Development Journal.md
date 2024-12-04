@@ -10,9 +10,9 @@ Bradley Curtis
 
 - As I have worked on 3D games in Unity in the past I wanted to challlenge myself to see if i would be able to implement a system I havent used before and I decided on a grappling hook. I wanted to specifically also use tools within unity that I havent done before so the grappling hook and using Spring Joints to make this work was my main goal within the task. 
 
-- I wanted to the grapple to feel less like a traditional grappling hook where the player is just pulled to the hook location but rather to be similar to a swing connected to both the player and wherever the hook lands. When the grapple swing was working, the grapple gun looked very stiff within the players hands so i also wanted to learn how to make it look towards where the spring joint had been created so I also learnt how to use Quaternion.Lerp 
+- I wanted to the grapple to feel less like a traditional grappling hook where the player is just pulled to the hook location but rather to be similar to a swing connected to both the player and wherever the hook lands. When the grapple swing was working, the grapple gun looked very stiff within the players hands so i also wanted to learn how to make it look towards where the spring joint had been created so I also learnt how to use Quaternion.Lerp (Technologies, n.d.)
 
- - My main help with the implementation of Spring Joints and using Lerp was the official Unreal Documentation 
+ - My main help with the implementation of Spring Joints and using Lerp was the official Unreal Documentation (Technologies, n.d.)
 
 
 ## Implementation
@@ -123,8 +123,7 @@ public class GrappleRotation : MonoBehaviour
     }
 }
 ```
-
-
+![Grapple Hook](GrappleHookImage.png)
 - After the initial prototype of the grapple, I asked some of my peers to play the game and a common problem came up, which was that the movement was way to fast and the grapple was unintuitive. 
 
 ```csharp
@@ -198,8 +197,13 @@ public class PlayerController : MonoBehaviour
 *Updated movement script to add drag on the player when they're on the ground and limit the players velocity to a set speed*
 
 ## Outcome
+![GameEngineImage](TetheredTrialsGameEngineIMG.png)
 
+[Video of final game](https://youtu.be/yAdk6yU182E)
 
+[Link to the game on Itch.io](https://popegames.itch.io/tethered-trials)
+
+[Link to github repository](https://github.com/2309516/3D-Platformer)
 
 ## Critical Reflection  
  
