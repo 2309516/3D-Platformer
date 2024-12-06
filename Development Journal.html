@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Development Journal.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="3d-platformer">3D Platformer</h1>
+<p>Fundamentals of Game Development (FGCT4015)</p>
+<p>Bradley Curtis</p>
+<p>2309516</p>
+<h2 id="research">Research</h2>
+<h3 id="relevant-sources-and-references">Relevant sources and references</h3>
+<ul>
+<li>
+<p>As I have worked on 3D games in Unity in the past I wanted to challlenge myself to see if i would be able to implement a system I havent used before and I decided on a grappling hook. I wanted to specifically also use tools within unity that I havent done before so the grappling hook and using Spring Joints to make this work was my main goal within the task.</p>
+</li>
+<li>
+<p>I wanted to the grapple to feel less like a traditional grappling hook where the player is just pulled to the hook location but rather to be similar to a swing connected to both the player and wherever the hook lands. When the grapple swing was working, the grapple gun looked very stiff within the players hands so i also wanted to learn how to make it look towards where the spring joint had been created so I also learnt how to use Quaternion.Lerp (Technologies, n.d.)</p>
+</li>
+<li>
+<p>My main help with the implementation of Spring Joints and using Lerp was the official Unreal Documentation (Technologies, n.d.)</p>
+</li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<ul>
+<li>Initially, I planned to make a simple 3D Platformer in terms of basically just jumping from object to object while avoiding traps but after a while of working on that I found myself getting distraced and trying to make a swinging mechanic which was very off topic but I followed through with it anyway.</li>
+</ul>
+<pre class="hljs"><code><div>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Awake</span>(<span class="hljs-params"></span>)</span>
+    {
+        rope = GetComponent&lt;LineRenderer&gt;();
+        scoreText = GameObject.Find(<span class="hljs-string">"score"</span>).GetComponent&lt;TMP_Text&gt;();
+
+    }
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)</span>
+    {
+        <span class="hljs-keyword">if</span> (Input.GetMouseButtonDown(<span class="hljs-number">0</span>))
+        {
+            Grapple();
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Input.GetMouseButtonUp(<span class="hljs-number">0</span>))
+        {
+            StopGrapple();
+        }
+
+        <span class="hljs-keyword">if</span> (springJoint != <span class="hljs-literal">null</span> &amp;&amp; Input.GetKey(KeyCode.E))
+        {
+            springJoint.maxDistance = Mathf.Max(<span class="hljs-number">0</span>, springJoint.maxDistance - <span class="hljs-number">0.5f</span>);
+        }
+    }
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">LateUpdate</span>(<span class="hljs-params"></span>)</span>
+    {
+        Rope();
+    }
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Grapple</span>(<span class="hljs-params"></span>)</span>
+    {
+        RaycastHit hit;
+        <span class="hljs-keyword">if</span> (Physics.Raycast(Camera.position, Camera.forward, <span class="hljs-keyword">out</span> hit, maxDistance))
+        {
+            <span class="hljs-keyword">if</span> (hit.collider.CompareTag(<span class="hljs-string">"ScoreOBJ"</span>))
+            {
+                score++;
+                scoreText.text = <span class="hljs-string">"Score: "</span> + score.ToString();
+                tempPoint = hit.collider.gameObject;
+            }
+            grapplePoint = hit.point;
+            springJoint = Player.AddComponent&lt;SpringJoint&gt;();
+            springJoint.autoConfigureConnectedAnchor = <span class="hljs-literal">false</span>;
+            springJoint.connectedAnchor = grapplePoint;
+            <span class="hljs-keyword">float</span> playerDistance = Vector3.Distance(Player.position, grapplePoint);
+            <span class="hljs-comment">// springJoint.maxDistance = playerDistance * 0.8f;</span>
+            springJoint.maxDistance = playerDistance * sj_maxDistance;
+            springJoint.spring = sj_spring;
+            springJoint.damper = sj_damper;
+            springJoint.massScale = sj_massScale;
+            rope.positionCount = sj_postionCount;
+        }
+    }
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">StopGrapple</span>(<span class="hljs-params"></span>)</span>
+    {
+        rope.positionCount = <span class="hljs-number">0</span>;
+        Destroy(springJoint);
+
+        <span class="hljs-keyword">if</span> (tempPoint == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span>;
+        Destroy(tempPoint);
+
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">isGrappling</span>(<span class="hljs-params"></span>)</span>
+    {
+        <span class="hljs-keyword">return</span> springJoint != <span class="hljs-literal">null</span>;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Vector3 <span class="hljs-title">GrapplePoint</span>(<span class="hljs-params"></span>)</span>
+    {
+        <span class="hljs-keyword">return</span> grapplePoint;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Rope</span>(<span class="hljs-params"></span>)</span>
+    {
+        <span class="hljs-keyword">if</span> (!springJoint)
+        {
+            <span class="hljs-keyword">return</span>;
+        }
+        rope.SetPosition(<span class="hljs-number">0</span>, lineRendererPoint.position);
+        rope.SetPosition(<span class="hljs-number">1</span>, grapplePoint);
+    }
+}
+</div></code></pre>
+<p><em>Implementation of the Grapple Gun</em></p>
+<ul>
+<li>I also added rotation to the grapple gun as it looked stiff and weird when the rope created by the line renderer would move around but the gun would always face forward so i added rotation using Quaternions.</li>
+</ul>
+<pre class="hljs"><code><div>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">GrappleRotation</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+   <span class="hljs-keyword">public</span> GrappleGunFix grapple;
+    <span class="hljs-keyword">private</span> Quaternion rotationAngle;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">float</span> rotateSpeed = <span class="hljs-number">5f</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)</span>   
+    {
+        <span class="hljs-keyword">if</span> (!grapple.isGrappling())
+        {
+            rotationAngle = transform.parent.rotation;
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            rotationAngle = Quaternion.LookRotation(grapple.GrapplePoint() - transform.position);
+        }
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotationAngle, Time.deltaTime * rotateSpeed);
+    }
+}
+</div></code></pre>
+<p><img src="https://raw.githubusercontent.com/2309516/3D-Platformer/refs/heads/main/GrappleHookImage.png" alt="Grapple Hook"></p>
+<ul>
+<li>After the initial prototype of the grapple, I asked some of my peers to play the game and a common problem came up, which was that the movement was way to fast and the grapple was unintuitive.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">using</span> UnityEngine;
+<span class="hljs-keyword">using</span> UnityEngine.SceneManagement;
+[<span class="hljs-meta">RequireComponent(typeof(Rigidbody))</span>]
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">PlayerController</span> : <span class="hljs-title">MonoBehaviour</span>
+{
+    [<span class="hljs-meta">Range(0f,1000f)</span>]<span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> playerSpeed = <span class="hljs-number">15f</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">float</span> jumpForce = <span class="hljs-number">30f</span>, groundDrag = <span class="hljs-number">5f</span>, airControlFactor = <span class="hljs-number">0.5f</span>, maxVelocity = <span class="hljs-number">10f</span>;
+
+    <span class="hljs-keyword">private</span> Rigidbody _rb;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">bool</span> _isGrounded;
+    <span class="hljs-keyword">private</span> Camera _mainCamera;
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Awake</span>(<span class="hljs-params"></span>)</span>
+    {
+        _rb = GetComponent&lt;Rigidbody&gt;();
+        _mainCamera = Camera.main;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)</span>
+    {
+        <span class="hljs-keyword">if</span> (Input.GetKeyDown(KeyCode.Space) &amp;&amp; _isGrounded)
+        {
+            _rb.velocity = <span class="hljs-keyword">new</span> Vector3(_rb.velocity.x, <span class="hljs-number">0</span>, _rb.velocity.z);
+            _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            _isGrounded = <span class="hljs-literal">false</span>;
+        }
+        Debug.Log(<span class="hljs-string">"Player Velocity: "</span> + _rb.velocity.magnitude);
+        
+        <span class="hljs-keyword">if</span> (Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
+        }
+        <span class="hljs-keyword">if</span> (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ExitToMenu();
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">FixedUpdate</span>(<span class="hljs-params"></span>)</span>
+    {
+        Vector3 cameraForward = Vector3.Scale(_mainCamera.transform.forward, <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>)).normalized;
+        Vector3 movement = (cameraForward * Input.GetAxis(<span class="hljs-string">"Vertical"</span>) + _mainCamera.transform.right * Input.GetAxis(<span class="hljs-string">"Horizontal"</span>)).normalized;
+        
+        _rb.AddForce(movement * playerSpeed * (_isGrounded ? <span class="hljs-number">1</span> : airControlFactor), ForceMode.Force);
+
+        <span class="hljs-keyword">if</span> (_rb.velocity.magnitude &gt; maxVelocity)
+        {
+            _rb.velocity = _rb.velocity.normalized * maxVelocity;
+        }
+
+        _isGrounded = Physics.Raycast(transform.position + Vector3.up * <span class="hljs-number">0.5f</span>, Vector3.down, <span class="hljs-number">2f</span>, ~<span class="hljs-number">0</span>);
+        _rb.drag = _isGrounded ? groundDrag : <span class="hljs-number">0f</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ExitToMenu</span>(<span class="hljs-params"></span>)</span>
+    {
+        SceneManager.LoadScene(<span class="hljs-number">0</span>);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Restart</span>(<span class="hljs-params"></span>)</span>
+    {
+        SceneManager.LoadScene(<span class="hljs-number">1</span>);
+    }
+}
+</div></code></pre>
+<p><em>Updated movement script to add drag on the player when they're on the ground and limit the players velocity to a set speed</em></p>
+<h2 id="outcome">Outcome</h2>
+<p><img src="https://raw.githubusercontent.com/2309516/3D-Platformer/refs/heads/main/TetheredTrialsGameEngineIMG.png" alt="GameEngineImage"></p>
+<p><a href="https://youtu.be/yAdk6yU182E">Link to gameplay video demonstration</a></p>
+<p><a href="https://popegames.itch.io/tethered-trials">Link to the game on Itch.io</a></p>
+<p><a href="https://github.com/2309516/3D-Platformer">Link to github repository</a></p>
+<h2 id="critical-reflection">Critical Reflection</h2>
+<ul>
+<li>
+<p>One of the biggest problems I had in creating the game was actually etting the grapple hook to work as for the longest time it kept on creating the 2nd Spring joint at 0,0,0 rather than at where the raycast was hitting. This was due to the Spring Joint being created in local space rather than world space.</p>
+</li>
+<li>
+<p>I spent a lot of my time tring to build a world which was unneccesary and if I didnt focus so much on that I couldve refined the player movement a little bit more and make the player feel less floaty after letting go of the grapple.</p>
+</li>
+<li>
+<p>Next time I will spend a bit more time thinking of a gameplay direction rather then just jumping in and trying to implement whatever comes into my head as this wasted a lot of my time on the project. I find myelf jumping around from script to script and from ideas when I dont have a clear direction of what I am trying to do. In the future I will plan more in detail of what I want to do next and have a better schedule in place.</p>
+</li>
+<li>
+<p>I am very happy with how the grappling hook turned out and that i was able to get it to work properly in the end.</p>
+</li>
+</ul>
+<h2 id="bibliography">Bibliography</h2>
+<p>Technologies, U. (n.d.). Unity - Manual: Spring Joint component reference. [online] docs.unity3d.com. Available at: https://docs.unity3d.com/Manual/class-SpringJoint.html.</p>
+<p>Technologies, U. (n.d.). Unity - Scripting API: Quaternion.Lerp. [online] docs.unity3d.com. Available at: https://docs.unity3d.com/ScriptReference/Quaternion.Lerp.html.</p>
+<p>‌Unity Technologies (2016). How do I import a custom image and put it on the canvas/pause menu? [online] Unity Discussions. Available at: https://discussions.unity.com/t/how-do-i-import-a-custom-image-and-put-it-on-the-canvas-pause-menu/172499 [Accessed 12 Nov. 2024].</p>
+<p>‌</p>
+<h2 id="declared-assets">Declared Assets</h2>
+<p>Kenney (2018). Crosshair Pack · Kenney. [online] Kenney.nl. Available at: https://kenney.nl/assets/crosshair-pack [Accessed 4 Oct. 2024].</p>
+<p>assetstore.unity.com. (n.d.). SimplePoly City - Low Poly Assets | 3D Environments | Unity Asset Store. [online] Available at: https://assetstore.unity.com/packages/3d/environments/simplepoly-city-low-poly-assets-58899.</p>
+<p>‌Cyberwave-Orchestra (2024). Upbeat Mission – Fun and Quirky Adventure | Royalty-free Music. [online] Pixabay.com. Available at: https://pixabay.com/music/bloopers-upbeat-mission-fun-and-quirky-adventure-248802/ [Accessed 12 Nov. 2024].</p>
+<p>‌
+‌
+The following assets were created or modified with the use of GPT 4o:</p>
+<ul>
+<li>Grapple Gun Fix.cs</li>
+<li>Player Controller.cs</li>
+<li>Grapple Rotation.cs
+‌</li>
+</ul>
+
+</body>
+</html>

@@ -123,7 +123,7 @@ public class GrappleRotation : MonoBehaviour
     }
 }
 ```
-![Grapple Hook](GrappleHookImage.png)
+![Grapple Hook](https://raw.githubusercontent.com/2309516/3D-Platformer/refs/heads/main/GrappleHookImage.png)
 - After the initial prototype of the grapple, I asked some of my peers to play the game and a common problem came up, which was that the movement was way to fast and the grapple was unintuitive. 
 
 ```csharp
@@ -197,7 +197,7 @@ public class PlayerController : MonoBehaviour
 *Updated movement script to add drag on the player when they're on the ground and limit the players velocity to a set speed*
 
 ## Outcome
-![GameEngineImage](TetheredTrialsGameEngineIMG.png)
+![GameEngineImage](https://raw.githubusercontent.com/2309516/3D-Platformer/refs/heads/main/TetheredTrialsGameEngineIMG.png)
 
 [Link to gameplay video demonstration](https://youtu.be/yAdk6yU182E)
 
